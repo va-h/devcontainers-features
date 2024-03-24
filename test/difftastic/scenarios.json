@@ -1,0 +1,10 @@
+{
+    "difftastic": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "difftastic": {
+                "version": "0.55.0"
+            }
+        }
+    }
+}
