@@ -1,0 +1,10 @@
+{
+    "uv": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "uv": {
+                "version": "0.1.24"
+            }
+        }
+    }
+}
