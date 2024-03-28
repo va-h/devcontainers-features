@@ -1,5 +1,5 @@
 
-# difftastic (via Github Releases (difftastic)
+# difftastic (via Github Releases) (difftastic)
 
 Difftastic is a structural diff tool that compares files based on their syntax.
 
