@@ -1,7 +1,7 @@
 
-# uv (via pipx) (uv)
+# uv (uv)
 
-An extremely fast Python package installer and resolver, written in Rust.
+An extremely fast Python package and project manager, written in Rust.
 
 ## Example Usage
 
