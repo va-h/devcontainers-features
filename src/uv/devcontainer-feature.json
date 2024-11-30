@@ -1,9 +1,9 @@
 {
     "id": "uv",
-    "version": "1.0.0",
-    "name": "uv (via pipx)",
+    "version": "1.1.0",
+    "name": "uv",
     "documentationURL": "http://github.com/va-h/devcontainers-features/tree/main/src/uv",
-    "description": "An extremely fast Python package installer and resolver, written in Rust.",
+    "description": "An extremely fast Python package and project manager, written in Rust.",
     "options": {
         "version": {
             "default": "latest",
@@ -13,9 +13,5 @@
             ],
             "type": "string"
         }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/pipx-package",
-        "ghcr.io/devcontainers/features/python"
-    ]
+    }
 }
