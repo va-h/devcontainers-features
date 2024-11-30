@@ -16,6 +16,7 @@ An extremely fast Python package and project manager, written in Rust.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version to install. | string | latest |
+| shellautocompletion | Enable or disable uv and uvx autocompletion. | boolean | false |
 
 ## uv Repository
 
