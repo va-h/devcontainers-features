@@ -1,7 +1,7 @@
 {
     "id": "difftastic",
-    "version": "1.0.0",
-    "name": "difftastic (via Github Releases)",
+    "version": "1.1.0",
+    "name": "difftastic",
     "documentationURL": "http://github.com/va-h/devcontainers-features/tree/main/src/difftastic",
     "description": "Difftastic is a structural diff tool that compares files based on their syntax.",
     "options": {
@@ -13,8 +13,5 @@
             ],
             "type": "string"
         }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers-contrib/features/gh-release"
-    ]
+    }
 }
