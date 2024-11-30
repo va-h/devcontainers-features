@@ -9,6 +9,7 @@ set -e
 # Clean up
 rm -rf /var/lib/apt/lists/*
 UV_VERSION="${VERSION:-"latest"}"
+AUTOCOMPLETION="${SHELLAUTOCOMPLETION:-"true"}"
 
 architecture="$(uname -m)"
 os="$(uname -s)"
@@ -152,5 +153,30 @@ rm -rf /tmp/uv
 rm -rf /var/lib/apt/lists/*
 
 uv --version
+
+enable_autocompletion() {
+    command=$1
+    if [ -f "$_REMOTE_USER_HOME/.bashrc" ]; then
+        echo "eval \"\$(${command} bash)\"" >> $_REMOTE_USER_HOME/.bashrc
+    fi
+    if [ -f "$_REMOTE_USER_HOME/.zshrc" ]; then
+        echo "eval \"\$(${command} zsh)\"" >> $_REMOTE_USER_HOME/.zshrc
+    fi
+    if [ -f "$_REMOTE_USER_HOME/.config/fish/config.fish" ]; then
+        echo "${command} fish | source" >> $_REMOTE_USER_HOME/.config/fish/config.fish
+    fi
+    if [ -f "$_REMOTE_USER_HOME/.elvish/rc.elv" ]; then
+        echo "eval (${command} elvish | slurp)" >> $_REMOTE_USER_HOME/.elvish/rc.elv
+    fi
+}
+
+if [ "$AUTOCOMPLETION"  = "true" ]; then
+    enable_autocompletion "uv generate-shell-completion"
+
+    # compability with older uv versions
+    if command -v uvx &> /dev/null; then
+        enable_autocompletion "uvx --generate-shell-completion"
+    fi
+fi
 
 echo "Done!"

@@ -6,5 +6,18 @@
                 "version": "0.5.4"
             }
         }
+    },
+    "uv-autocomplete": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils:2.5.2": {
+                "installZsh": true,
+                "installOhMyZsh": false,
+                "upgradePackages": false
+            },
+            "uv": {
+                "shellautocompletion": true
+            }
+        }
     }
 }
