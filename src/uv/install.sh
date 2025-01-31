@@ -163,7 +163,7 @@ enable_autocompletion() {
         echo "eval \"\$(${command} zsh)\"" >> $_REMOTE_USER_HOME/.zshrc
     fi
     if [ -f "$_REMOTE_USER_HOME/.config/fish/config.fish" ]; then
-        echo "${command} fish | source" >> $_REMOTE_USER_HOME/.config/fish/config.fish
+        echo "${command} fish" >> $_REMOTE_USER_HOME/.config/fish/config.fish
     fi
     if [ -f "$_REMOTE_USER_HOME/.elvish/rc.elv" ]; then
         echo "eval (${command} elvish | slurp)" >> $_REMOTE_USER_HOME/.elvish/rc.elv
