@@ -162,8 +162,9 @@ enable_autocompletion() {
     if [ -f "$_REMOTE_USER_HOME/.zshrc" ]; then
         echo "eval \"\$(${command} zsh)\"" >> $_REMOTE_USER_HOME/.zshrc
     fi
-    if [ -f "$_REMOTE_USER_HOME/.config/fish/config.fish" ]; then
-        echo "${command} fish" >> $_REMOTE_USER_HOME/.config/fish/config.fish
+    if [ -d "$_REMOTE_USER_HOME/.config/fish" ]; then
+        mkdir -p $_REMOTE_USER_HOME/.config/fish/completions
+        ${command} fish >> $_REMOTE_USER_HOME/.config/fish/completions/uv.fish
     fi
     if [ -f "$_REMOTE_USER_HOME/.elvish/rc.elv" ]; then
         echo "eval (${command} elvish | slurp)" >> $_REMOTE_USER_HOME/.elvish/rc.elv
