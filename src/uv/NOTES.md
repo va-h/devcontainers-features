@@ -2,10 +2,13 @@
 
 * [astral-sh/uv](https://github.com/astral-sh/uv)
 
-## Autocompletion for other shells than Bash
+## Fix Autocompletion with feature Shells
 
-When installing a shell via another feature, make sure to override the installation order to make sure that the autocomplatetion takes place. Here is an example installing the Fish shell and enabling autocompletion for it:
+> [!IMPORTANT]
+> When installing a shell via another feature, make sure to override the installation order to ensure the generated autocompletion writes to existing files.
 
+### Autocompletion for Fish Shell
+ 
 ```json
 "features": {
     "ghcr.io/meaningful-ooo/devcontainer-features/fish:latest": {},
