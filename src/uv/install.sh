@@ -159,9 +159,6 @@ enable_autocompletion() {
     ${command} bash >> /usr/share/bash-completion/completions/uv
     ${command} zsh >> /usr/share/zsh/vendor-completions/_uv
     ${command} fish >> /usr/share/fish/completions/uv.fish
-    if [ -f "$_REMOTE_USER_HOME/.elvish/rc.elv" ]; then
-        echo "eval (${command} elvish | slurp)" >> $_REMOTE_USER_HOME/.elvish/rc.elv
-    fi
 }
 
 if [ "$AUTOCOMPLETION"  = "true" ]; then
