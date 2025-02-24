@@ -162,6 +162,7 @@ enable_autocompletion() {
 }
 
 if [ "$AUTOCOMPLETION"  = "true" ]; then
+    mkdir -p /usr/share/fish/completions/
     enable_autocompletion "uv generate-shell-completion"
 
     # compability with older uv versions
