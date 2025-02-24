@@ -9,8 +9,9 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "uv autocomplete bash" cat ~/.bashrc | grep "eval \"\$(uv" | grep bash
-check "uv autocomplete zsh" cat ~/.zshrc | grep "eval \"\$(uv" | grep zsh
+check "uv autocomplete bash" [ -e /usr/share/bash-completion/completions/uv ]
+check "uv autocomplete zsh"  [ -e /usr/share/zsh/vendor-completions/_uv ]
+check "uv autocomplete fish" [ -e /usr/share/fish/completions/uv.fish ]
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

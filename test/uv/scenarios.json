@@ -8,7 +8,7 @@
         }
     },
     "uv-autocomplete": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "ghcr.io/devcontainers/features/common-utils:2.5.2": {
                 "installZsh": true,
