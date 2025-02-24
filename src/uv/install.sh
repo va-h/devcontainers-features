@@ -156,19 +156,9 @@ uv --version
 
 enable_autocompletion() {
     command=$1
-    if [ -f "$_REMOTE_USER_HOME/.bashrc" ]; then
-        echo "eval \"\$(${command} bash)\"" >> $_REMOTE_USER_HOME/.bashrc
-    fi
-    if [ -f "$_REMOTE_USER_HOME/.zshrc" ]; then
-        echo "eval \"\$(${command} zsh)\"" >> $_REMOTE_USER_HOME/.zshrc
-    fi
-    if [ -d "$_REMOTE_USER_HOME/.config/fish" ]; then
-        mkdir -p $_REMOTE_USER_HOME/.config/fish/completions
-        ${command} fish >> $_REMOTE_USER_HOME/.config/fish/completions/uv.fish
-    fi
-    if [ -f "$_REMOTE_USER_HOME/.elvish/rc.elv" ]; then
-        echo "eval (${command} elvish | slurp)" >> $_REMOTE_USER_HOME/.elvish/rc.elv
-    fi
+    ${command} bash >> /usr/share/bash-completion/completions/uv
+    ${command} zsh >> /usr/share/zsh/vendor-completions/_uv
+    ${command} fish >> /usr/share/fish/completions/uv.fish
 }
 
 if [ "$AUTOCOMPLETION"  = "true" ]; then
